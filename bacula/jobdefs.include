@@ -1,0 +1,68 @@
+JobDefs {
+	Name = LINUX-SS-FULL-JD
+	Type = Backup
+	Level = Full
+	FileSet = LINUX-SS-FS
+	Messages = Standard
+	Priority = 10
+	Write Bootstrap = "%c_%n.bsr"
+	Accurate = yes
+
+}
+
+JobDefs {
+	Name = LINUX-SS-DIFF-JD
+	Type = Backup
+	Level = Differential 
+	FileSet = LINUX-SS-FS
+	Messages = Standard
+	Priority = 10	
+	Write Bootstrap = "%c_%n.bsr"
+	Accurate = yes
+}
+
+
+JobDefs {
+	Name = LINUX-SS-INCREMENT-JD
+	Type = Backup
+	Level = Incremental 
+	FileSet = LINUX-SS-FS
+	Messages = Standard
+	Priority = 10
+	Write Bootstrap = "%c_%n.bsr"
+	Accurate = yes
+}
+
+JobDefs {
+	Name = WIN-SS-FULL-JD
+	Type = Backup
+	Level = Full
+	FileSet = WIN-SS-FS
+	Messages = Standard
+	Priority = 10
+	Write Bootstrap = "%c_%n.bsr"
+	Accurate = yes
+]
+
+JobDefs {
+	Name = WIN-SS-DIFF-JD
+	Type = Backup
+	Level = Differential 
+	FileSet = WIN-SS-FS
+	Messages = Standard
+	Priority = 10	
+	Write Bootstrap = "%c_%n.bsr"
+	Accurate = yes
+}
+
+
+JobDefs {
+	Name = WIN-SS-INCREMENT-JD
+	Type = Backup
+	Level = Incremental 
+	FileSet = WIN-SS-FS
+	Messages = Standard
+	Priority = 10
+	Write Bootstrap = "%c_%n.bsr"
+	Accurate = yes
+}

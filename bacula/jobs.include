@@ -1,0 +1,216 @@
+Job {
+	Name = Storage1-SS-Full-Job
+	Type = Backup
+	Level = Full
+	Client = Storage1
+	Pool = Storage1-Full-Pool 
+	Storage = Storage1-ST
+	FileSet = Linux-SS-FS
+	Schedule = WeeklyCycle-Storage1-SS-Sched
+	Messages = Standard
+	Write Bootstrap = /backup/storage1-dev/"%c_%n.bsr"
+	Accurate = yes
+	Reschedule On Error = yes
+	Reschedule Interval = 10 minutes
+	Reschedule Times = 10
+}
+
+Job {
+	Name = Storage1-SS-Diff-Job
+	Type = Backup
+	Level = Differential
+	Client = Storage1
+	Pool = Storage1-Diff-Pool 
+	Storage = Storage1-ST
+	FileSet = Linux-SS-FS
+	Schedule = WeeklyCycle-Storage1-SS-Sched
+	Messages = Standard
+	Write Bootstrap = /backup/storage1-dev/"%c_%n.bsr"
+	Accurate = yes
+	Reschedule On Error = yes
+	Reschedule Interval = 10 minutes
+	Reschedule Times = 10
+}
+
+Job {
+	Name = Storage1-SS-Increment-Job
+	Type = Backup
+	Level = Incremental
+	Client = Storage1
+	Pool = Storage1-Increment-Pool 
+	Storage = Storage1-ST
+	FileSet = Linux-SS-FS
+	Messages = Standard
+	Write Bootstrap = /backup/storage1-dev/"%c_%n.bsr"
+	Accurate = yes
+	Reschedule On Error = yes
+	Reschedule Interval = 10 minutes
+	Reschedule Times = 10
+}
+
+Job {
+	Name = Storage1-Shares-Full-Job
+	Type = Backup
+	Level = Full
+	Client = Storage1
+	Pool = Storage1-Full-Pool 
+	Storage = Storage1-ST
+	FileSet = Linux-Shares-FS
+	Schedule = WeeklyCycle-Storage1-Shares-Sched 
+	Messages = Standard
+	Write Bootstrap = /backup/storage1-dev/"%c_%n.bsr"
+	Accurate = yes
+	Reschedule On Error = yes
+	Reschedule Interval = 10 minutes
+	Reschedule Times = 10
+}
+
+Job {
+	Name = Storage1-Shares-Diff-Job
+	Type = Backup
+	Level = Differential
+	Client = Storage1
+	Pool = Storage1-Diff-Pool 
+	Storage = Storage1-ST
+	FileSet = Linux-Shares-FS
+	Schedule = WeeklyCycle-Storage1-Shares-Sched
+	Messages = Standard
+	Write Bootstrap = /backup/storage1-dev/"%c_%n.bsr"
+	Accurate = yes
+	Reschedule On Error = yes
+	Reschedule Interval = 10 minutes
+	Reschedule Times = 10
+}
+
+Job {
+	Name = Storage1-Shares-Increment-Job
+	Type = Backup
+	Level = Incremental
+	Client = Storage1
+	Pool = Storage1-Increment-Pool 
+	Storage = Storage1-ST
+	FileSet = Linux-Shares-FS
+	Messages = Standard
+	Write Bootstrap = /backup/storage1-dev/"%c_%n.bsr"
+	Accurate = yes
+	Reschedule On Error = yes
+	Reschedule Interval = 10 minutes
+	Reschedule Times = 10
+}
+
+Job {
+	Name = Backup1-SS-Full-Job
+	Type = Backup
+	Level = Full
+	Client = Backup1
+	Pool = Backup1-Full-Pool 
+	Storage = Backup1-ST
+	FileSet = Linux-SS-FS
+	Schedule = WeeklyCycle-Backup1-SS-Sched
+	Messages = Standard
+	Write Bootstrap = /backup/backup1-dev/"%c_%n.bsr"
+	Accurate = yes
+	Reschedule On Error = yes
+	Reschedule Interval = 10 minutes
+	Reschedule Times = 10
+}
+
+Job {
+	Name = Backup1-SS-Diff-Job
+	Type = Backup
+	Level = Differential
+	Client = Backup1
+	Pool = Backup1-Diff-Pool 
+	Storage = Backup1-ST
+	FileSet = Linux-SS-FS
+	Schedule = WeeklyCycle-Backup1-SS-Sched 
+	Messages = Standard
+	Write Bootstrap = /backup/backup1-dev/"%c_%n.bsr"
+	Accurate = yes
+	Reschedule On Error = yes
+	Reschedule Interval = 10 minutes
+	Reschedule Times = 10
+}
+
+Job {
+	Name = Backup1-SS-Increment-Job
+	Type = Backup
+	Level = Incremental
+	Client = Backup1
+	Pool = Backup1-Increment-Pool 
+	Storage = Backup1-ST
+	FileSet = Linux-SS-FS
+	Messages = Standard
+	Write Bootstrap = /backup/backup1-dev/"%c_%n.bsr"
+	Accurate = yes
+	Reschedule On Error = yes
+	Reschedule Interval = 10 minutes
+	Reschedule Times = 10
+}
+
+Job {
+	Name = Backup1-DB-Dump-Job
+	Type = Backup
+	Level = Full
+	Client = Backup1
+	Pool = Backup1-Full-Pool 
+	Storage = Backup1-ST
+	FileSet = Backup1-DB-FS
+	Schedule = MonthlyCycle-Backup1-DB-Sched
+	Messages = Standard
+	Write Bootstrap = /backup/backup1-dev/"%c_%n.bsr"
+	Accurate = yes
+	Reschedule On Error = yes
+	Reschedule Interval = 10 minutes
+	Reschedule Times = 10
+}
+
+Job {
+	Name = Dc1-SS-Full-Job
+	Type = Backup
+	Level = Full
+	Client = Dc1
+	Pool = Dc1-Full-Pool
+	Storage = Dc1-ST
+	FileSet = 
+	Schedule = WeeklyCycle-Dc1-SS-Sched 
+	Messages = Standard
+	Write Bootstrap = /backup/dc1-dev/"%c_%n.bsr"
+	Accurate = yes
+	Reschedule On Error = yes
+	Reschedule Interval = 10 minutes
+	Reschedule Times = 10
+}
+
+Job {
+	Name = Dc1-SS-Diff-Job
+	Type = Backup
+	Level = Differential
+	Client = Dc1
+	Pool = Dc1-Diff-Pool
+	Storage = Dc1-ST
+	FileSet = 
+	Schedule = WeeklyCycle-Dc1-SS-Sched 
+	Messages = Standard
+	Write Bootstrap = /backup/dc1-dev/"%c_%n.bsr"
+	Accurate = yes
+	Reschedule On Error = yes
+	Reschedule Interval = 10 minutes
+	Reschedule Times = 10
+}
+
+Job {
+	Name = Dc1-SS-Increment-Job
+	Type = Backup
+	Level = Incremental
+	Client = Dc1
+	Pool = Dc1-Increment-Pool
+	Storage = Dc1-ST
+	FileSet = 
+	Messages = Standard
+	Write Bootstrap = /backup/dc1-dev/"%c_%n.bsr"
+	Accurate = yes
+	Reschedule On Error = yes
+	Reschedule Interval = 10 minutes
+	Reschedule Times = 10
+}

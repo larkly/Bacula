@@ -1,0 +1,26 @@
+Storage {
+	Name = Storage1-ST
+	Address = backup1
+	SDPort = 9103
+	Password = 
+	Device = Storage1-Dev
+	Media Type = Storage1-ST-File
+}
+
+Storage {
+	Name = Backup1-ST
+	Address = backup1
+	SDPort = 9103
+	Password = 
+	Device = Backup1-Dev
+	Media Type = Backup1-ST-File
+}
+
+Storage {
+	Name = Dc1-ST
+	Address = dc1
+	SDPort = 9103
+	Password = 
+	Device = Dc1-Dev
+	Media Type = Dc1-ST-File
+}
