@@ -1,0 +1,19 @@
+[User1]
+
+path = /storage/profiles/User1
+comment = User1 Roaming Profile
+read only = no
+browseable = no
+inherit permissions = yes
+valid users = TEST^User1 TEST^Dc-Dir
+admin users = TEST^Dc-Dir
+
+[User2]
+
+path = /storage/profiles/User2
+comment = User2 Roaming Profile
+read only = no
+browseable = no
+inherit permissions = yes
+valid users = TEST^User2 TEST^Dc-Dir
+admin users = TEST^Dc-Dir
