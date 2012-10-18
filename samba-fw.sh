@@ -44,7 +44,7 @@ $IPT -A INPUT -p udp -m udp -s $LOCAL_NET -d $LOCAL_NET --sport $NETBIOS_DGM -j 
 $IPT -A INPUT -p tcp -m tcp -s $LOCAL_NET -d $LOCAL_NET --sport $MS_DS -j ACCEPT
 $IPT -A INPUT -p tcp -m tcp -s $LOCAL_NET -d $LOCAL_NET --sport $WINBIND -j ACCEPT
 $IPT -A INPUT -p udp -m udp -s $LOCAL_NET -d $LOCAL_NET --sport $NTP -j ACCEPT
-
+$IPT -A INOUT -p icmp -s $LOCAL_NET -d $LOCAL_NET -j ACCEPT
 
 # OUTPUT chain rules
 
@@ -62,6 +62,7 @@ $IPT -A OUTPUT -p udp -m udp -s $LOCAL_NET -d $LOCAL_NET --dport $NETBIOS_DGM -j
 $IPT -A OUTPUT -p tcp -m tcp -s $LOCAL_NET -d $LOCAL_NET --dport $MS_DS -j ACCEPT
 $IPT -A OUTPUT -p tcp -m tcp -s $LOCAL_NET -d $LOCAL_NET --dport $WINBIND -j ACCEPT
 $IPT -A OUTPUT -p udp -m udp -s $LOCAL_NET -d $LOCAL_NET --dport $NTP -j ACCEPT
+$IPT -A OUTPUT -p icmp -s $LOCAL_NET -d $LOCAL_NET -j ACCEPT
 
 $ Log all dropped packets
 
