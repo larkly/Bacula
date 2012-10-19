@@ -51,14 +51,14 @@ $IPT -A INPUT -s $LOCAL_NET -d $LOCAL_NET -p udp -m udp --sport $NTB_NS -j ACCEP
 $IPT -A INPUT -s $LOCAL_NET -d $LOCAL_NET -p tcp -m tcp --dport $MS_DS -j ACCEPT 
 $IPT -A INPUT -s $LOCAL_NET -d $LOCAL_NET -p tcp -m tcp --sport $MS_DS -j ACCEPT
 $IPT -A INPUT -s $LOCAL_NET -d $LOCAL_NET -p udp -m udp --sport $RPC -j ACCEPT
-$IPT -A INPUT -s $LOCAL_NET -d $LOCAL_NET -p tcp -m -multiports $WINBIND -j ACCEPT 
+$IPT -A INPUT -s $LOCAL_NET -d $LOCAL_NET -p tcp -m -multiports --dport $WINBIND -j ACCEPT 
 $IPT -A OUTPUT -s $LOCAL_NET -d $LOCAL_NET -p udp -m udp --dport $NTB_DGM -j ACCEPT
 $IPT -A OUTPUT -s $LOCAL_NET -d $LOCAL_NET -p tcp -m tcp --sport $NTB_SSN -j ACCEPT 
 $IPT -A OUTPUT -s $LOCAL_NET -d $LOCAL_NET -p udp -m udp --dport $NTB_NS -j ACCEPT 
 $IPT -A OUTPUT -s $LOCAL_NET -d $LOCAL_NET -p tcp -m tcp --dport $MS_DS -j ACCEPT 
 $IPT -A OUTPUT -s $LOCAL_NET -d $LOCAL_NET -p tcp -m tcp --sport $MS_DS -j ACCEPT 
 $IPT -A OUTPUT -s $LOCAL_NET -d $LOCAL_NET -p udp -m udp --dport $RPC -j ACCEPT 
-$IPT -A OUTPUT -s $LOCAL_NET -d $LOCAL_NET -p tcp -m tcp --dport $WINBIND -j ACCEPT
+$IPT -A OUTPUT -s $LOCAL_NET -d $LOCAL_NET -p tcp -m multiports --dport $WINBIND -j ACCEPT
 
 ## Kerberos rules
 $IPT -A INPUT -s $LOCAL_NET -d $LOCAL_NET -p tcp -m tcp --sport $KRB -j ACCEPT 
