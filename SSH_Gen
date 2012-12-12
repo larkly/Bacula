@@ -1,0 +1,51 @@
+#! /bin/bash
+
+###################################################
+### OpenSSH Server initial configuration script ###
+###################################################
+
+# Определяем переменные
+
+SSH_CONF_DIR='/etc/ssh'
+SSH_CONF_FILE='/etc/ssh/sshd_config'
+SSH_CONF_FILE_OLD='/etc/ssh/sshd_config.old'
+SSH_KEY_FILE='~/.ssh/id_rsa'
+
+
+# Резервируем конфигурационный файл
+
+if [ -d "$SSH_CONF_DIR" ]; then
+  echo 'Backing up configuration file...'
+	cp ${SSH_CONF_FILE} ${SSH_CONF_FILE_OLD} && \
+	echo 'Done!'
+else
+	echo 'OpenSSH Server directory non exist!'
+	exit 1
+fi
+
+# Генерируем приватный и публичный ключ
+
+echo 'Generating SSH keys...'
+
+ssh-keygen -b 4096 -f ${SSH_KEY_FILE} -N 'gnuisnotunix' >> /dev/null && \
+echo 'Done!'
+
+sleep 2
+
+# Подготавливаем ключи
+
+
+if [ -f "$SSH_KEY_FILE" ]; then
+	echo 'Creating autohorized keys file...'
+	mv ${SSH_KEY_FILE} ~/.ssh/authorized_keys && \
+	echo 'Done!'
+else
+	echo 'SSH key not exist!'
+	exit 1
+fi
+
+sleep 1
+
+echo 'Changing permissions..'
+
+chmod -R 700 ${SSH_KEY_DIR} && echo 'Done!'
